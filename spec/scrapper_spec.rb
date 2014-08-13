@@ -1,6 +1,6 @@
 require "./scrapper"
 
-describe "scrapper" do 
+describe "get_todays_rows" do 
 
   before(:each) do
     # use @doc in your tests to avoid hitting the

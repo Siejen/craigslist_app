@@ -2,6 +2,8 @@
 require 'nokogiri'
 require 'open-uri'
 
+
+
 def filter_links(rows, regex)
   # takes in rows and returns uses
   # regex to only return links
@@ -28,10 +30,10 @@ def search(date_str)
   doc = Nokogiri::HTML(open(file))
 
   # get todays rows
-results = doc.css(".row")
-dogs = results.select {|row| row.css(".hdrlnk").text.match(/(puppy|pup|dog)/)}
-final_result = dogs.select {|row| row.css(".date").text.match(/(Aug 12)/)}
-puts final_result
+  results = doc.css(".row")
+  dogs = results.select {|row| row.css(".hdrlnk").text.match(/(puppy|pup|dog)/)}
+  final_result = dogs.select {|row| row.css(".date").text.match(/(Aug 12)/)}
+  puts final_result
 end
 
 #playing with time
@@ -42,3 +44,15 @@ end
 #   http://www.ruby-doc.org/stdlib-1.9.3/libdoc/date/rdoc/Date.html#strftime-method
 today = Time.now.strftime("%b %d")
 search(today)
+
+
+
+
+
+
+
+
+
+
+
+
